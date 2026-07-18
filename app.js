@@ -5,7 +5,15 @@
 document.addEventListener("DOMContentLoaded", () => {
     console.log("🚀 RikDataStream Pro Frontend Core Initialized.");
     
-    // 1. Simulating Local Hardware Telemetry Progress Tracking Loops
+    // 1. Detecting User's Real Device Memory Natively
+    // navigator.deviceMemory returns approximate RAM size in Gigabytes (e.g. 4, 8, 32)
+    const deviceTotalRam = navigator.deviceMemory || 8; 
+    const totalRamLabel = document.getElementById("total-ram-label");
+    if (totalRamLabel) {
+        totalRamLabel.innerText = deviceTotalRam;
+    }
+
+    // 2. Simulating Local Hardware Telemetry Progress Tracking Loops
     const cpuBar = document.getElementById("cpu-bar");
     const cpuText = document.getElementById("cpu-text");
     const ramBar = document.getElementById("ram-bar");
@@ -14,8 +22,11 @@ document.addEventListener("DOMContentLoaded", () => {
     setInterval(() => {
         // Generating safe micro-fluctuations simulating active hardware tasks
         const mockCpu = (Math.random() * 45 + 15).toFixed(1);
-        const mockRamFree = (Math.random() * 4 + 22).toFixed(1);
-        const mockRamPercent = (((32 - mockRamFree) / 32) * 100).toFixed(1);
+        
+        // Dynamically calculates used and free RAM based on the user's actual hardware size!
+        const mockRamUsed = (Math.random() * (deviceTotalRam * 0.3) + (deviceTotalRam * 0.4)).toFixed(1);
+        const mockRamFree = (deviceTotalRam - mockRamUsed).toFixed(1);
+        const mockRamPercent = ((mockRamUsed / deviceTotalRam) * 100).toFixed(1);
 
         if (cpuBar && cpuText) {
             cpuBar.style.width = `${mockCpu}%`;
@@ -27,7 +38,7 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     }, 1500);
 
-    // 2. Client-Side Low-Latency Network Stream Monitoring Loops
+    // 3. Client-Side Low-Latency Network Stream Monitoring Loops
     const pingVal = document.getElementById("ping-val");
     setInterval(() => {
         const mockPing = Math.floor(Math.random() * 12 + 8);
@@ -36,7 +47,7 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     }, 2000);
 
-    // 3. Client Sandbox Table Interface Query Executor Trigger
+    // 4. Client Sandbox Table Interface Query Executor Trigger
     const runBtn = document.getElementById("run-query-btn");
     if (runBtn) {
         runBtn.addEventListener("click", () => {
@@ -56,7 +67,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 });
 
-// 4. Secure Progressive Web App (PWA) Background Proxy Registry
+// 5. Secure Progressive Web App (PWA) Background Proxy Registry
 if ("serviceWorker" in navigator) {
     window.addEventListener("load", () => {
         navigator.serviceWorker.register("sw.js")
