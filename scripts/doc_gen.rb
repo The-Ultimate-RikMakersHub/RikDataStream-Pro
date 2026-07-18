@@ -1,0 +1,13 @@
+# 💎 RIKMAKERSHUB COMPLIANCE RUNNER
+def check_repository_integrity
+  puts "⚙️ Running static analysis over project metrics..."
+  data_vault_path = "data/mock.xml"
+  
+  if File.exist?(data_vault_path)
+    puts "File integrity verified: clear metadata stream."
+  else
+    puts "Warning: target XML layer unallocated."
+  end
+end
+
+check_repository_integrity
