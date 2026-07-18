@@ -1,0 +1,11 @@
+package com.rikmakershub.monitor;
+
+// ☕ CLIENT-SIDE METADATA INTERFACE BLUEPRINT 
+public class AppModel {
+    private String nodeId = "Purulia-Core-Alpha";
+    private boolean isOperational = true;
+
+    public String getNodeIdentity() {
+        return this.nodeId;
+    }
+}
