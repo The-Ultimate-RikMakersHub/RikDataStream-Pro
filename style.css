@@ -1,0 +1,265 @@
+/* =========================================================
+   🎨 RIKDATASTREAM NEON CYBERPUNK USER INTERFACE BLUEPRINT
+   ========================================================= */
+
+:root {
+    --bg-slate: #090d16;
+    --panel-black: #0f172a;
+    --matrix-green: #10b981;
+    --neon-cyan: #06b6d4;
+    --border-teal: #1e293b;
+    --text-white: #f8fafc;
+    --font-terminal: 'Courier New', Courier, monospace;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: var(--bg-slate);
+    color: var(--text-white);
+    font-family: var(--font-terminal);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+/* Header UI Elements */
+.matrix-header {
+    background-color: var(--panel-black);
+    border-bottom: 2px solid var(--border-teal);
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.brand-core {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.brand-core h1 {
+    font-size: 1.2rem;
+    color: var(--neon-cyan);
+    letter-spacing: 2px;
+}
+
+.pulse-node {
+    width: 10px;
+    height: 10px;
+    background-color: var(--matrix-green);
+    border-radius: 50%;
+    box-shadow: 0 0 8px var(--matrix-green);
+}
+
+.org-tag {
+    font-size: 0.8rem;
+    color: #64748b;
+}
+
+/* Dashboard Core Layout Grid */
+.dashboard-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+    gap: 1.5rem;
+    padding: 2rem;
+    flex: 1;
+}
+
+.dashboard-panel {
+    background-color: var(--panel-black);
+    border: 1px solid var(--border-teal);
+    border-radius: 4px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.5);
+}
+
+.panel-header {
+    background-color: #1e293b;
+    padding: 0.6rem 1rem;
+    font-size: 0.85rem;
+    font-weight: bold;
+    color: var(--text-white);
+    border-bottom: 1px solid var(--border-teal);
+    letter-spacing: 1px;
+}
+
+.panel-body {
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    flex: 1;
+}
+
+/* Live Telemetry Bar Indicators */
+.metric-block {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.metric-block label {
+    font-size: 0.75rem;
+    color: #94a3b8;
+}
+
+.progress-container {
+    background-color: var(--bg-slate);
+    height: 12px;
+    border-radius: 2px;
+    border: 1px solid var(--border-teal);
+    overflow: hidden;
+}
+
+.progress-bar {
+    height: 100%;
+    background: linear-gradient(90deg, var(--matrix-green), var(--neon-cyan));
+    transition: width 0.4s cubic-bezier(0.1, 0.8, 0.25, 1);
+}
+
+.metric-value {
+    font-size: 0.9rem;
+    text-align: right;
+    color: var(--neon-cyan);
+    font-weight: bold;
+}
+
+/* Network Analyzer Utilities */
+.chart-box {
+    background-color: var(--bg-slate);
+    border: 1px solid var(--border-teal);
+    height: 180px;
+    border-radius: 2px;
+    position: relative;
+}
+
+canvas {
+    width: 100%;
+    height: 100%;
+}
+
+.stat-line-group {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.8rem;
+}
+
+.neon-cyan { color: var(--neon-cyan); font-weight: bold; }
+.matrix-green { color: var(--matrix-green); font-weight: bold; }
+
+/* Relational Terminal Sandbox Controls */
+.panel-instruction {
+    font-size: 0.75rem;
+    color: #64748b;
+    line-height: 1.4;
+}
+
+.terminal-input-wrapper {
+    background-color: var(--bg-slate);
+    border: 1px solid var(--border-teal);
+    padding: 0.6rem 1rem;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    border-radius: 2px;
+}
+
+.prompt-char {
+    color: var(--matrix-green);
+    font-size: 0.85rem;
+}
+
+.terminal-input-wrapper input {
+    background: none;
+    border: none;
+    color: var(--text-white);
+    font-family: var(--font-terminal);
+    font-size: 0.85rem;
+    width: 100%;
+    outline: none;
+}
+
+.terminal-btn {
+    background-color: transparent;
+    border: 1px solid var(--neon-cyan);
+    color: var(--neon-cyan);
+    font-family: var(--font-terminal);
+    padding: 0.6rem;
+    font-size: 0.8rem;
+    cursor: pointer;
+    border-radius: 2px;
+    transition: all 0.2s ease;
+    font-weight: bold;
+}
+
+.terminal-btn:hover {
+    background-color: var(--neon-cyan);
+    color: var(--bg-slate);
+    box-shadow: 0 0 10px var(--neon-cyan);
+}
+
+/* Client Table Views */
+.table-container {
+    overflow-x: auto;
+    border: 1px solid var(--border-teal);
+    background-color: var(--bg-slate);
+    border-radius: 2px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.75rem;
+    text-align: left;
+}
+
+th {
+    background-color: #1e293b;
+    padding: 0.5rem;
+    color: #94a3b8;
+    border-bottom: 1px solid var(--border-teal);
+}
+
+td {
+    padding: 0.5rem;
+    border-bottom: 1px solid var(--border-teal);
+}
+
+.empty-row-msg {
+    text-align: center;
+    color: #475569;
+    padding: 1.5rem 0;
+}
+
+/* Footer UI Status Lines */
+.matrix-footer {
+    background-color: var(--panel-black);
+    border-top: 2px solid var(--border-teal);
+    padding: 0.6rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.65rem;
+    color: #475569;
+    letter-spacing: 1px;
+}
+
+/* Responsive Scaling Breakpoints */
+@media (max-width: 600px) {
+    .dashboard-grid {
+        grid-template-columns: 1fr;
+        padding: 1rem;
+    }
+    .matrix-header, .matrix-footer {
+        flex-direction: column;
+        gap: 10px;
+        text-align: center;
+    }
+}
