@@ -1,0 +1,22 @@
+# =========================================================
+# ⚙️ TOML WORKSPACE DEPENDENCY MAP FOR IN-BROWSER WEBASSMEBLY
+# =========================================================
+[package]
+name = "rik-datastream-core"
+version = "1.0.0"
+edition = "2021"
+authors = ["RikMakersHub Systems Team"]
+publish = false
+
+[lib]
+crate-type = ["cdylib", "rlib"]
+
+[dependencies]
+# The essential bridge that links compiled memory structures straight to JS/TS engine loops
+wasm-bindgen = "0.2.92"
+
+[profile.release]
+opt-level = "s"      # Optimizes binary file size strictly for fast mobile web downloads
+lto = true           # Enables Link-Time Optimization across your compiling blocks
+panic = "abort"      # Strips out heavy stack-unwinding code to keep the asset footprint lean
+codegen-units = 1    # Forces a single code generation block to ensure deep data compression
