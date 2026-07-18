@@ -1,0 +1,54 @@
+# =========================================================
+# 🎛️ ULTIMATE 18-LANGUAGE DETECT FORCE OVERRIDES
+# =========================================================
+*.html linguist-language=HTML
+*.html linguist-detectable=true
+
+*.css linguist-language=CSS
+*.css linguist-detectable=true
+
+*.ts linguist-language=TypeScript
+*.ts linguist-detectable=true
+
+*.js linguist-language=JavaScript
+*.js linguist-detectable=true
+
+*.rs linguist-language=Rust
+*.rs linguist-detectable=true
+
+*.cpp linguist-language=C++
+*.cpp linguist-detectable=true
+
+*.java linguist-language=Java
+*.java linguist-detectable=true
+
+*.py linguist-language=Python
+*.py linguist-detectable=true
+
+*.rb linguist-language=Ruby
+*.rb linguist-detectable=true
+
+*.sql linguist-language=SQL
+*.sql linguist-detectable=true
+
+*.xml linguist-language=XML
+*.xml linguist-detectable=true
+*.xml linguist-documentation=false
+
+*.sh linguist-language=Shell
+*.sh linguist-detectable=true
+
+*.json linguist-language=JSON
+*.json linguist-detectable=true
+
+*.ini linguist-language=INI
+*.ini linguist-detectable=true
+
+*.toml linguist-language=TOML
+*.toml linguist-detectable=true
+
+*.yml linguist-language=YAML
+*.yml linguist-detectable=true
+
+*.md linguist-language=Markdown
+*.md linguist-detectable=true
