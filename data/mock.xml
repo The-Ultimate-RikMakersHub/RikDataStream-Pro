@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 📊 RIKMAKERSHUB SERIALIZED TELEMETRY TARGET INTERCHANGE -->
+<DataStreamNetwork status="operational">
+    <MetricsFrame node="Purulia-Alpha">
+        <Throughput>1428.57</Throughput>
+        <LatencyMS>14.2</LatencyMS>
+        <Timestamp>1781776000</Timestamp>
+    </MetricsFrame>
+</DataStreamNetwork>
