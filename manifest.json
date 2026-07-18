@@ -1,0 +1,20 @@
+{
+  "short_name": "RikDataStream",
+  "name": "RikDataStream-Pro Edge Monitor",
+  "description": "100% Client-Side 18-Language System Telemetry and Network Matrix Monitoring Engine.",
+  "start_url": "/RikDataStream-Pro/index.html",
+  "background_color": "#090d16",
+  "theme_color": "#090d16",
+  "display": "standalone",
+  "orientation": "portrait",
+  "icons": [
+    {
+      "src": "teacher.png",
+      "type": "image/png",
+      "sizes": "512x512",
+      "purpose": "any maskable"
+    }
+  ],
+  "categories": ["utilities", "developer_tools"],
+  "prefer_related_applications": false
+}
